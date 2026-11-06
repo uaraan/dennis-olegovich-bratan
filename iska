@@ -1,0 +1,79 @@
+#14
+class BankAccount:
+    total_accounts = 0
+
+    def __init__(self):
+        BankAccount.total_accounts += 1
+        self.account_number = BankAccount.total_accounts
+
+account1 = BankAccount()
+account2 = BankAccount()
+
+print(account1.account_number)
+print(account2.account_number)
+print(BankAccount.total_accounts)
+
+
+#15
+class Product:
+    vat_rate = 0.2
+
+    def price_with_vat(self, price):
+        return price + price * self.vat_rate
+
+product = Product()
+
+print(product.price_with_vat(1000))
+
+
+#16
+class Library:
+    total_books_in_system = 0
+
+    def __init__(self):
+        self.books = []
+
+    def add_book(self, book):
+        self.books.append(book)
+        Library.total_books_in_system += 1
+
+library1 = Library()
+library2 = Library()
+
+library1.add_book("Война и мир")
+library1.add_book("Преступление и наказание")
+library2.add_book("Гарри Поттер")
+
+print(Library.total_books_in_system)
+
+
+#17
+class Game:
+    total_games = 0
+
+    def __init__(self):
+        Game.total_games += 1
+
+game1 = Game()
+game2 = Game()
+game3 = Game()
+
+print(Game.total_games)
+
+
+#18
+class Order:
+    orders_count = 0
+
+    def __init__(self):
+        Order.orders_count += 1
+
+    @classmethod
+    def get_total_orders(cls):
+    return cls.orders_count
+
+order1 = Order()
+order2 = Order()
+order3 = Order()
+
+print(Order.get_total_orders())
